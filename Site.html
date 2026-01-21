@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <meta charset="UTF-8">
+    <link rel="icon" href="file:///media/fuse/drivefs-0c39dbf5c069442cb3803768db2d80e8/root/Sites/Favicon.ico" type="image/ico">
+    <title>Viggo's site</title>
+  </header>
+  <body onscroll="change()">
+    <style>
+        li{
+          color: red;
+          text-decoration: pink double underline;
+        }
+        a{
+          text-decoration: none;
+        }
+    </style>
+    <h1>My name is Viggo, nice to meet you!</h1>
+    <p><b>Death is alright</b></p>
+    <p><a href="https://sites.google.com/utb.mjolby.se/viggos-website-soon-switching/startsida">My google sites site</a></p>
+    <p><a href="Test.html"><b>My personal site</b></a></p>
+    <img src="Screenshot.png" alt="This is an image I generated during an experiment with gradients." height="420" width="600">
+    <p>This is a test of lists. The results will go here for the ordered list (ol):</p>
+    <ol>
+      <li id="thext" style="color:red" onclick="changeColor()">Money</li>
+      <li>Life</li>
+      <li>Pain</li>
+    </ol>
+    <script>
+        function change(){
+          let thext = document.getElementById("thext");
+          thext.style.color="green"
+        };
+
+        function changeColor(){
+            let thext = document.getElementById("thext");
+            let ch=true
+            if(thext.style.color=="red" && ch){
+              thext.style.color="blue";
+              ch=false
+            };
+            if(thext.style.color=="blue" && ch){
+              thext.style.color="green";
+              ch=false
+            };
+            if(thext.style.color=="green" && ch){
+              thext.style.color="red";
+              ch=false
+            };
+        };
+    </script>
+    <p>This is a test of lists. The results will go here for the unordered list (ul):</p>
+    <ul>
+      <li>Money</li>
+      <li>Life</li>
+      <li>Pain</li>
+    </ul>
+    <p>This is a test of lists. The results will go here for the definition list (dl):</p>
+    <dl>
+      <dt>Money</dt>
+      <dd>Life</dd>
+      <dd>Pain</dd>
+    </dl>
+    <dl>
+      <dt><h3><b>The table:</b></h3></dt>
+      <dd>
+        <table>
+          <tr>
+            <td><p><b>Hello, this should be row 1 cell 1 </b></p></td>
+            <td><p><strike> This should be row 1 cell 2</strike></p></td>
+          </tr>
+          <tr>
+            <td><p><i>Hello, this should be row 2 cell 1 </i></p></td>
+            <td><p><mark> This should be row 2 cell 2</mark></p></td>
+          </tr>
+        </table>
+      </dd>
+    </dl>
+  </body>
+</html>
