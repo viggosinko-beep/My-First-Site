@@ -1,7 +1,21 @@
+#Tesst li{
+    text-decoration: wavy underline;
+    overflow:none;
+}
+#Tesst li:hover{
+    text-decoration: green wavy underline;
+}
+
 li{
     color: red;
     text-decoration: pink double underline;
 }
 a{
     text-decoration: none;
+}
+#thext{
+    width:50px;
+}
+#thext:hover{
+    background:grey;
 }
