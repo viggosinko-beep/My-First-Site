@@ -1,21 +1,59 @@
-#Tesst li{
-    text-decoration: wavy underline;
-    overflow:none;
+.alc{
+    text-align:center;
 }
-#Tesst li:hover{
-    text-decoration: green wavy underline;
+.alr{
+    text-align:right;
 }
-
-li{
-    color: red;
-    text-decoration: pink double underline;
+.io:hover{
+    background-color:grey;
 }
-a{
-    text-decoration: none;
+body{
+    background-image:url(Screenshot.png);
+    background-size:100%;
 }
-#thext{
-    width:50px;
+p{
+    color:lightgrey
 }
-#thext:hover{
-    background:grey;
+h1{
+    color:lightgrey
+}
+.nav{
+    float:right;
+    list-style-type:none;
+}
+.nav li{
+    float:left;
+    font-size:x-large;
+    margin-left:10px;
+    padding-left: 2px;
+    padding-right:4px;
+    background: rgba(219,21,80,0.6);
+    border-radius:5px;
+}
+.nav li:hover{
+    background: rgba(219,21,80,0.8);
+}
+.nav a{
+    text-decoration:none;
+    color:black;
+}
+.lnk{
+    text-decoration:none;
+    color:lightgrey;
+    font-size:large;
+    background-image:url(Screenshot.png);
+    background-size:100%;
+    border-radius:5px;
+    padding-left:4px;
+    padding-right:4px;
+}
+#home{
+    background-image:url(Screenshot.png);
+    background-size:200%;
+}
+#divs{
+    background:none;
+}
+#divs:hover{
+    background:none;
 }

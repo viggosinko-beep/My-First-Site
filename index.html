@@ -1,77 +1,24 @@
 <!DOCTYPE html>
 <html>
   <header>
-    <meta charset="UTF-8">
-    <link rel="icon" href="Favicon.ico" type="image/ico">
-    <link rel="stylesheet" type="text/css" href="bars.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Viggo's site</title>
-  </header>
-  <body onscroll="change()">
-    <ul id="nav">
-      <li><a href="index.html">Home</a></li>
-      <li id="divider" style="color:black">|</li>
-      <li><a href="Test.html">About Me</a></li>
-      <li id="divider" style="color:black">|</li>
-      <li><a href="https://sites.google.com/utb.mjolby.se/viggos-website-soon-switching/startsida">My google sites site</a></li>
-    </ul>
-    <h1>My name is Viggo, nice to meet you!</h1>
-    <img src="Screenshot.png" alt="This is an image I generated during an experiment with gradients." height="420" width="600">
-    <p>This is a test of lists. The results will go here for the ordered list (ol):</p>
-    <ol>
-      <li id="thext" style="color:red" onclick="changeColor()">Money</li>
-      <li>Life</li>
-      <li>Pain</li>
-    </ol>
-    <script>
-        function change(){
-          let thext = document.getElementById("thext");
-          thext.style.color="green"
-        };
-
-        function changeColor(){
-            let thext = document.getElementById("thext");
-            let ch=true
-            if(thext.style.color=="red" && ch){
-              thext.style.color="blue";
-              ch=false
-            };
-            if(thext.style.color=="blue" && ch){
-              thext.style.color="green";
-              ch=false
-            };
-            if(thext.style.color=="green" && ch){
-              thext.style.color="red";
-              ch=false
-            };
-        };
-    </script>
-    <p>This is a test of lists. The results will go here for the unordered list (ul):</p>
-    <ul id="Tesst">
-      <li>Money</li>
-      <li>Life</li>
-      <li>Pain</li>
-    </ul>
-    <p>This is a test of lists. The results will go here for the definition list (dl):</p>
-    <dl>
-      <dt>Money</dt>
-      <dd><code style="color:blue">Life</code></dd>
-      <dd>Pain</dd>
-    </dl>
-    <dl>
-      <dt><h3><b>The table:</b></h3></dt>
-      <dd>
-        <table>
-          <tr>
-            <td><p><b>Hello, this should be row 1 cell 1 </b></p></td>
-            <td><p><strike> This should be row 1 cell 2</strike></p></td>
-          </tr>
-          <tr>
-            <td><p><i>Hello, this should be row 2 cell 1 </i></p></td>
-            <td><p><mark> This should be row 2 cell 2</mark></p></td>
-          </tr>
-        </table>
-      </dd>
-    </dl>
-  </body>
+      <title>Viggo's Experiments</title>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <meta charset="UTF-8">
+      <meta name="Author" content="Viggo">
+    </header>
+    <body>
+        <ul class="nav">
+            <li id="home"><a href="index.html">Home</a></li>
+            <li id="divs">|</li>
+            <li><a href="Koda.html">Koda</a></li>
+        </ul>
+        <div class="alc">
+          <h1 style="margin-left:200px;">Viggo's Experiments</h1>
+          <p style="margin-left:200px;">This site is the index page of Viggo's Experiments, new things will occationally be added and expanded upon.</p>
+        </div>
+        <dl class="alc">
+            <dt><h2 style="margin-left:40px; color:lightgrey">Pages:</h3></dt>
+            <dd><a class="lnk" href="https://sites.google.com/utb.mjolby.se/viggos-website-soon-switching/startsida?authuser=0" target="_blank"><code>My google sites site</code></a></dd>
+        </dl>
+    </body>
 </html>
