@@ -1,0 +1,16 @@
+#nav a {
+    text-decoration: none;
+}
+#nav {
+    background: none;
+    list-style-type: none;
+    overflow: none;
+}
+#nav li {
+    float: right;
+    padding: 10px;
+    text-decoration: none;
+}
+#nav li:hover {
+    background: gray;
+}
