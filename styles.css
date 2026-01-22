@@ -12,10 +12,11 @@ body{
     background-size:100%;
 }
 p{
-    color:lightgrey
+    color:lightgrey;
+    font-size:large;
 }
 h1{
-    color:lightgrey
+    color:lightgrey;
 }
 .nav{
     float:right;
