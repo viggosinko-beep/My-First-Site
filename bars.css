@@ -11,6 +11,9 @@
     padding: 10px;
     text-decoration: none;
 }
+#divider{
+    background: none !important;
+}
 #nav li:hover {
     background: gray;
 }
