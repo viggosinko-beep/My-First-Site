@@ -7,6 +7,10 @@
 .io:hover{
     background-color:grey;
 }
+iframe{
+    border:5px solid black;
+    background-color:white;
+}
 body{
     background-image:url(Screenshot.png);
     background-size:100%;
