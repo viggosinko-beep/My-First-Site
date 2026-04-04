@@ -169,16 +169,16 @@ document.addEventListener("keyup",(event)=>{
 });
 
 document.addEventListener("mousedown",(event)=>{
-    if(!flip){
+    //if(!flip){
         bird.jump();
-        flip=true;
-    }
+        //flip=true;
+    //}
 });
 
-document.addEventListener("mouseup",(event)=>{
+/*document.addEventListener("mouseup",(event)=>{
     if(flip){
         flip=false;
     }
-});
+});*/
 
 requestAnimationFrame(gameLoop);
