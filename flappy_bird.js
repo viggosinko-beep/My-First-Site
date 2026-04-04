@@ -160,8 +160,22 @@ document.addEventListener("keydown",(event)=>{
         flip=true;
     }
 });
+
 document.addEventListener("keyup",(event)=>{
     keyboard[event.key.toLowerCase()]=false;
+    if(flip){
+        flip=false;
+    }
+});
+
+document.addEventListener("mousedown",(event)=>{
+    if(!flip){
+        bird.jump();
+        flip=true;
+    }
+});
+
+document.addEventListener("mouseup",(event)=>{
     if(flip){
         flip=false;
     }
