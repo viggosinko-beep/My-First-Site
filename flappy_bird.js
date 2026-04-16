@@ -137,7 +137,7 @@ function gameLoop(){
             }
             collided=true;
         }
-        if(a.x< -a.sx+2) a.reset(Math.random()*(totalHeight-300)+150,Math.random()*200+100);
+        if(a.x< -a.sx+2) a.reset(Math.random()*(totalHeight-300)+150,Math.random()*200/(bird.x/100)+100);
         a.draw();
     }
     if(vy<0) vy=0;
