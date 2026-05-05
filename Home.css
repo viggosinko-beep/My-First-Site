@@ -1,0 +1,6 @@
+@keyframes animation{
+    0% {background:linear-gradient()}
+    33% {background:linear-gradient(red,blue);}
+    66% {background:linear-gradient(blue,green);}
+    100% {backrgound:linear-gradient(green,red);}
+}
