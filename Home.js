@@ -38,7 +38,7 @@ let iframe=CAAE('iframe','iti',['width','500px'],['height','500px'],['style','ba
 CAAE('td',CAAE('tr',table,['id','ttr']),['id','jti']);
 CAAE('td','ttr',['id','hti']);
 
-let cHTML=CAAE('button','hti',['innerHTML','Add new HTML window'],['style','float','right'],['style','visibility','hidden']);
+let cHTML=CAAE('button','hti',['innerHTML','Add new HTML window'],['style','float:right;visibility:hidden;']);
 let html=CAAE('textarea','hti',['rows','20'],['cols','75'],['placeholder','Type HTML here...'],['style','background','white'],['style','resize','none'],['style','float','right'],['value',`<!DOCTYPE html>
 <html>
     <head>
