@@ -48,7 +48,9 @@ let html=CAAE('textarea','hti',['rows','20'],['cols','75'],['placeholder','Type 
     </head>
     <body>
         <p>This is a paragraph!</p>
-        <identifier>
+        <input type='text' placeholder='Enter' id='mjo'></input>
+        <button id='butt'>Enter</button>
+        <script><identifier></script>
     </body>
 </html>`]);
 
@@ -56,7 +58,13 @@ let cJS=CAAE('button','jti',['innerHTML','Add new Extern window'],['style','floa
 const jss=[];
 jss.push(CAAE('textarea','jti',['rows','20'],['cols','75'],['placeholder','Type Extern Here...'],['style','background','white'],['style','resize','none'],['style','float','right'],['value',`<identifier>
 
-<input type='text' placeholder='Enter'></input>`]));
+let inputField=document.getElementById('mjo');
+let button=document.getElementById('butt');
+button.onclick=()=>{
+    let p=document.createElement('p');
+    p.innerHTML=inputField.value;
+    document.body.appendChild(p);
+};`]));
 cJS.onclick=()=>{
     jss.push(CAAE('textarea',CAAE('td',CAAE('tr',table)),['rows','20'],['cols','75'],['placeholder','Type Extern Here...'],['style','background','white'],['style','resize','none'],['style','float','right'],['value',``]));
 };
