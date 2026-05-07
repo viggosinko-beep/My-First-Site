@@ -22,18 +22,18 @@ let table=CAAE('table','maod');
 
 CAAE('tr',table,['id','itr']);
 
-CAAE('td','itr',['width','50%']);
+CAAE('td','itr',['id','iti'],['colSpan',2],['style','text-align:center;']);
 
-CAAE('td','itr',['id','iti'],['width','50%']);
+CAAE('div','iti',['id','buttons']);
 
 
-let button=CAAE('button','iti',['innerHTML','TEST!'],['style','float:right;']);
-let del=CAAE('button','iti',['innerHTML','DEL'],['style','float:right;']);
-let load=CAAE('button','iti',['innerHTML','LOAD'],['style','float:right;']);
-let save=CAAE('button','iti',['innerHTML','SAVE'],['style','float:right;']);
-let nameField=CAAE('input','iti',['type','text'],['placeholder','Save Name'],['style','float:right;']);
-let down=CAAE('button','iti',['innerHTML','Download'],['style','float:right;']);
-let iframe=CAAE('iframe','iti',['width','500px'],['height','500px'],['style','background:white;float:right;border:5px solid black;']);
+let button=CAAE('button','buttons',['innerHTML','TEST!']);
+let del=CAAE('button','buttons',['innerHTML','DEL']);
+let load=CAAE('button','buttons',['innerHTML','LOAD']);
+let save=CAAE('button','buttons',['innerHTML','SAVE']);
+let nameField=CAAE('input','buttons',['type','text'],['placeholder','Save Name']);
+let down=CAAE('button','buttons',['innerHTML','Download']);
+let iframe=CAAE('iframe','iti',['width','1000px'],['height','562px'],['style','background:white;border:5px solid black;']);
 
 CAAE('td',CAAE('tr',table,['id','ttr']),['id','jti']);
 CAAE('td','ttr',['id','hti']);
