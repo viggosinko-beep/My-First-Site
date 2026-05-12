@@ -1,4 +1,6 @@
 document.body.style=`background: linear-gradient(red, blue);`;
+const editorWidth=670;
+const editorHeight=500;
 
 function CAAE(tag, parent,...args){
     const a=document.createElement(tag);
@@ -39,7 +41,7 @@ CAAE('td',CAAE('tr',table,['id','ttr']),['id','jti']);
 CAAE('td','ttr',['id','hti']);
 
 let cHTML=CAAE('button','hti',['innerHTML','Add new HTML window'],['style','float:right;visibility:hidden;']);
-let html=CAAE('textarea','hti',['rows','20'],['cols','75'],['placeholder','Type HTML here...'],['style','background','white'],['style','resize','none'],['style','float','right'],['value',`<!DOCTYPE html>
+let html=CodeMirror.fromTextArea(CAAE('textarea','hti',['rows','20'],['cols','75'],['placeholder','Type HTML here...'],['style','background','white'],['style','resize','none'],['style','float','right'],['value',`<!DOCTYPE html>
 <html>
     <head>
         <title>Put the page's title here</title>
@@ -52,11 +54,19 @@ let html=CAAE('textarea','hti',['rows','20'],['cols','75'],['placeholder','Type 
         <button id='butt'>Enter</button>
         <script><identifier></script>
     </body>
-</html>`]);
+</html>`]),{
+    mode:'htmlmixed',
+    theme:'default',
+    lineNumbers:true,
+    autoCloseBrackets:true,
+    lineWrapping:true
+});
+
+html.setSize(editorWidth,editorHeight);
 
 let cJS=CAAE('button','jti',['innerHTML','Add new Extern window'],['style','float','right']);
 const jss=[];
-jss.push(CAAE('textarea','jti',['rows','20'],['cols','75'],['placeholder','Type Extern Here...'],['style','background','white'],['style','resize','none'],['style','float','right'],['value',`<identifier>
+jss.push(CodeMirror.fromTextArea(CAAE('textarea','jti',['rows','20'],['cols','75'],['placeholder','Type Extern Here...'],['style','background','white'],['style','resize','none'],['style','float','right'],['value',`<identifier>;
 
 let inputField=document.getElementById('mjo');
 let button=document.getElementById('butt');
@@ -64,9 +74,23 @@ button.onclick=()=>{
     let p=document.createElement('p');
     p.innerHTML=inputField.value;
     document.body.appendChild(p);
-};`]));
+};`]),{
+    mode:'javascript',
+    theme:'default',
+    lineNumbers:true,
+    autoCloseBrackets:true,
+    lineWrapping:true
+}));
+jss[0].setSize(editorWidth,editorHeight);
 cJS.onclick=()=>{
-    jss.push(CAAE('textarea',CAAE('td',CAAE('tr',table)),['rows','20'],['cols','75'],['placeholder','Type Extern Here...'],['style','background','white'],['style','resize','none'],['style','float','right'],['value',``]));
+    jss.push(CodeMirror.fromTextArea(CAAE('textarea',CAAE('td',CAAE('tr',table)),['rows','20'],['cols','75'],['placeholder','Type Extern Here...'],['style','background','white'],['style','resize','none'],['style','float','right'],['value',``]),{
+        mode:'javascript',
+        theme:'default',
+        lineNumbers:true,
+        autoCloseBrackets:true,
+        lineWrapping:true
+    }));
+    jss[jss.length-1].setSize(editorWidth,editorHeight);
 };
 
 function findId(string){
@@ -84,11 +108,11 @@ function replace(string1, identifier, string2){
 }
 
 button.onclick=()=>{
-    let string=html.value;
+    let string=html.getValue();
     for(const a of jss){
-        let id=findId(a.value)
+        let id=findId(a.getValue());
         if(id){
-            let content=a.value.slice(id.length+2);
+            let content=a.getValue().slice(id.length+2);
             string=replace(string,id,content);
         }
     }
@@ -96,11 +120,11 @@ button.onclick=()=>{
 };
 
 down.onclick=()=>{
-    let content=html.value;
+    let content=html.getValue();
     for(const a of jss){
-        let id=findId(a.value)
+        let id=findId(a.getValue());
         if(id){
-            let contentt=a.value.slice(id.length+2);
+            let contentt=a.getValue().slice(id.length+2);
             content=replace(content,id,contentt);
         }
     }
@@ -119,26 +143,35 @@ down.onclick=()=>{
 };
 
 save.onclick=()=>{
-    localStorage.setItem(nameField.value+'/html',html.value);
+    localStorage.setItem(nameField.value+'/html',html.getValue());
     localStorage.setItem(nameField.value+'/jss.length',jss.length);
     for(let i=0;i<jss.length;i++){
-        localStorage.setItem(nameField.value+`/jss[${i}]`,jss[i].value);
+        localStorage.setItem(nameField.value+`/jss[${i}]`,jss[i].getValue());
     }
 };
 
 load.onclick=()=>{
-    html.value=localStorage.getItem(nameField.value+'/html');
+    html.setValue(localStorage.getItem(nameField.value+'/html'));
     let length=localStorage.getItem(nameField.value+'/jss.length');
-    if(length<1) jss[0].value='';
+    if(length<1) jss[0].setValue('');
     let i=0;
     for(;i<length;i++){
-        if(i<jss.length) jss[i].value=localStorage.getItem(nameField.value+`/jss[${i}]`);
-        else jss.push(CAAE('textarea',CAAE('td',CAAE('tr',table)),['rows','20'],['cols','75'],['placeholder','Type Extern Here...'],['style','background','white'],['style','resize','none'],['style','float','right'],['value',localStorage.getItem(nameField.value+`/jss[${i}]`)]));
+        if(i<jss.length) jss[i].setValue(localStorage.getItem(nameField.value+`/jss[${i}]`));
+        else{
+            jss.push(CodeMirror.fromTextArea(CAAE('textarea',CAAE('td',CAAE('tr',table)),['rows','20'],['cols','75'],['placeholder','Type Extern Here...'],['style','background','white'],['style','resize','none'],['style','float','right'],['value',localStorage.getItem(nameField.value+`/jss[${i}]`)]),{
+                mode:'javascript',
+                theme:'default',
+                lineNumbers:true,
+                autoCloseBrackets:true,
+                lineWrapping:true
+            }));
+            jss[jss.length-1].setSize(editorWidth,editorHeight)
+        };
     }
     if(jss.length>length){
         const toremove=jss.splice(length>1?length:1);
         toremove.forEach(el=>{
-            const row=el.closest('tr');
+            const row=el.getWrapperElement().closest('tr');
             if(row) row.remove();
         })
     }
