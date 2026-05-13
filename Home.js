@@ -43,17 +43,17 @@ CAAE('td','ttr',['id','hti']);
 let cHTML=CAAE('button','hti',['innerHTML','Add new HTML window'],['style','float:right;visibility:hidden;']);
 let html=CodeMirror.fromTextArea(CAAE('textarea','hti',['rows','20'],['cols','75'],['placeholder','Type HTML here...'],['style','background','white'],['style','resize','none'],['style','float','right'],['value',`<!DOCTYPE html>
 <html>
-    <head>
-        <title>Put the page's title here</title>
-        <meta charset='UTF-8'>
-        <meta name='Author' content='Put your name here'>
-    </head>
-    <body>
-        <p>This is a paragraph!</p>
-        <input type='text' placeholder='Enter' id='mjo'></input>
-        <button id='butt'>Enter</button>
-        <script><identifier></script>
-    </body>
+  <head>
+    <title>Put the page's title here</title>
+    <meta charset='UTF-8'>
+    <meta name='Author' content='Put your name here'>
+  </head>
+  <body>
+    <p>This is a paragraph!</p>
+    <input type='text' placeholder='Enter' id='mjo'></input>
+    <button id='butt'>Enter</button>
+    <script><identifier></script>
+  </body>
 </html>`]),{
     mode:'htmlmixed',
     theme:'default',
@@ -71,9 +71,9 @@ jss.push(CodeMirror.fromTextArea(CAAE('textarea','jti',['rows','20'],['cols','75
 let inputField=document.getElementById('mjo');
 let button=document.getElementById('butt');
 button.onclick=()=>{
-    let p=document.createElement('p');
-    p.innerHTML=inputField.value;
-    document.body.appendChild(p);
+  let p=document.createElement('p');
+  p.innerHTML=inputField.value;
+  document.body.appendChild(p);
 };`]),{
     mode:'javascript',
     theme:'default',
