@@ -71,9 +71,15 @@ jss.push(CodeMirror.fromTextArea(CAAE('textarea','jti',['rows','20'],['cols','75
 let inputField=document.getElementById('mjo');
 let button=document.getElementById('butt');
 button.onclick=()=>{
-  let p=document.createElement('p');
-  p.innerHTML=inputField.value;
-  document.body.appendChild(p);
+  if(document.getElementById('hekp')){
+    let p=document.getElementById('hekp');
+      p.innerHTML=inputField.value;
+  }else{
+    let p=document.createElement('p');
+      p.innerHTML=inputField.value;
+      p.id='hekp';
+      document.body.appendChild(p);
+  }
 };`]),{
     mode:'javascript',
     theme:'default',
