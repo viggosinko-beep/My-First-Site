@@ -50,7 +50,7 @@ let html=CodeMirror.fromTextArea(CAAE('textarea','hti',['rows','20'],['cols','75
   </head>
   <body>
     <p>This is a paragraph!</p>
-    <input type='text' placeholder='Enter' id='mjo'></input>
+    <input type='text' placeholder='Enter' id='mjo'>
     <button id='butt'>Enter</button>
     <script><identifier></script>
   </body>
